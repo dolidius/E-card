@@ -9,6 +9,10 @@ import BotSet from './CardSet/BotSet';
 import ResultModal from './ResultModal/ResultModal';
 
 import itemRemove from '../../containers/utilities/itemRemove';
+import soundfile from '../../sounds/zawa.wav';
+
+const audio = new Audio(soundfile);
+
 
 class Game extends Component {
     state = {
@@ -22,6 +26,7 @@ class Game extends Component {
         botScore: 0,
         makePlayerBoard: null,
         makeBotBoard: null,
+        botStarting: false,
         playSound: false,
         turn: 0,
         opened: false
@@ -37,38 +42,50 @@ class Game extends Component {
         if(data.botCard !== undefined) this.setState({botCard: data.botCard});
         if(data.makeBotBoard !== undefined) this.setState({makeBotBoard: data.makeBotBoard});
         if(data.makePlayerBoard !== undefined) this.setState({makePlayerBoard: data.makePlayerBoard});
+        if(data.rotateBotCard !== undefined) this.setState({rotateBotCard: data.rotateBotCard});
     }
 
-    endTurn = () => {
+    endPlayerTurn = () => {
+        if(!this.state.botCard){
+            this.state.moveCardBot();
+        }
+
+        if(this.state.botStarting){
+            this.state.rotateBotCard(this.state.botCard.card);
+        }
+
         this.setState({playing: false, isDisabled: true});
-        this.state.moveCardBot();
         setTimeout(() => {
             const result = this.checkResults(this.state.playerCard.type, this.state.botCard.type);
             if(result === 'win' || result === 'lose') {
-                this.setState({playSound: true})
+                setTimeout(() => {
+                    audio.play();
+                }, this.state.botStarting ? 350 : 1000)
             }
             setTimeout(() => {
                 switch(result){
                     case 'win':
-                        this.setState(prevState => ({
+                    this.setState(prevState => ({
                             playerScore: prevState.playerScore + (this.state.set === 'emperor' ? 1 : 3),
                             playSound: false,
-                            turn: prevState.turn + 1
+                            turn: prevState.turn + 1,
+                            playerCard: null, 
+                            botCard: null,
                         }));
 
                         this.checkTurn();
-
-                        this.resetTurn();
+                        this.resetTurn(true);
                         break;
                     case 'lose':
                         this.setState(prevState => ({
                             botScore: prevState.botScore + (this.state.set === 'emperor' ? 3 : 1),
                             playSound: false,
-                            turn: prevState.turn + 1
+                            turn: prevState.turn + 1,
+                            playerCard: null, 
+                            botCard: null
                         }));
 
                         this.checkTurn();
-                        
                         this.resetTurn();
                         break;
                     default:
@@ -77,8 +94,17 @@ class Game extends Component {
     
                         itemRemove(playerCard);
                         itemRemove(botCard);
+
+                        if(this.state.botStarting){
+                            this.setState({playing: false, isDisabled: true, playerCard: null, botCard: null});
+                            this.state.moveCardBot();
+                            setTimeout(() => this.setState({
+                                playing: true
+                            }), 1200);
+                        }else{
+                            this.setState({playing: true, isDisabled: true, playerCard: null, botCard: null});
+                        }
     
-                        this.setState({playing: true, isDisabled: true, playerCard, botCard});
                 }
 
             }, 2000);
@@ -96,10 +122,19 @@ class Game extends Component {
         }
     }
 
-    resetTurn = () => {
+    resetTurn = (change = false) => {
         this.state.makeBotBoard();
         this.state.makePlayerBoard();
-        this.setState({playing: true});
+
+        if(change){
+            this.setState({playing: false, botStarting: true});
+            this.state.moveCardBot();
+            setTimeout(() => this.setState({
+                playing: true
+            }), 1200);
+        }else{
+            this.setState({playing: true, botStarting: false});
+        }
     }
 
     resetGame = () => {
@@ -153,19 +188,28 @@ class Game extends Component {
     }
 
     render() {
+        let text;
+        if(this.state.playing) {
+            text = 'End Turn'
+            if(this.state.isDisabled) {
+                text = 'Pick a card'
+            }
+        } else {
+            text="Enemy's Turn"
+        }
         return (
             <GameContainer>
             
                 <Score playerScore={this.state.playerScore} botScore={this.state.botScore} />
 
                 <CardSet sendData={this.getData} set={this.state.set} playing={this.state.playing} />
-                <BotSet playSound={this.state.playSound} sendData={this.getData} set={this.state.set === 'emperor' ? 'slave' : 'emperor'}  />
+                <BotSet playSound={this.state.playSound} sendData={this.getData} set={this.state.set === 'emperor' ? 'slave' : 'emperor'} starting={this.state.botStarting} />
 
                 <Button 
-                    text={this.state.playing ? "End turn" : "Enemy's turn"}
+                    text={text}
                     btnClass='button__game'
                     isDisabled={this.state.isDisabled}
-                    clicked={this.endTurn}
+                    clicked={this.endPlayerTurn}
                 />
 
                 <ResultModal resetGame={this.resetGame} opened={this.state.opened} playerScore={this.state.playerScore} botScore={this.state.botScore} />

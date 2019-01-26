@@ -11,7 +11,7 @@ class Home extends Component {
 
                 <div className={classes.home__group}>
                     <Button href="game" text='Singleplayer' btnClass='button__home' animated/>
-                    <Button href="multi" text='Multiplayer' btnClass='button__home' animated/>
+                    <Button text='Multiplayer' btnClass='button__home button__soon button__disabled' animated/>
                 </div>
 
                 <div className={classes.home__group}>

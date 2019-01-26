@@ -30,7 +30,6 @@ class CardSet extends Component {
 
 
     makeBoard = () => {
-        console.log(this.props.set);
         const cardSet = [];
         let mainCardIndex = null;
         const set = this.props.set === 'emperor' ? emperor : slave;
