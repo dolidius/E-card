@@ -1,0 +1,16 @@
+.container{
+    width: 88%;
+    height: 88vh;
+    background: rgba(0,0,0,.65);
+    border: 3px gray groove;    
+    position: relative;
+
+    &__game {
+        width: 88%;
+        height: 88vh;
+        border: 2px white groove;
+        background: #303033;    
+        position: relative;
+    }
+}
+

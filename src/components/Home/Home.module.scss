@@ -1,0 +1,17 @@
+@import './../../sass/typography/headings';
+
+.home {
+    &__group{
+        &:first-of-type{
+            margin-top: 2.5%;
+
+            @media(min-height: 800px) {
+                margin-top: 5%;
+            }
+        }
+        display: flex;
+        justify-content: center;
+        
+    }
+
+}

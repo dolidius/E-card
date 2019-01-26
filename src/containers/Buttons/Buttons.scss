@@ -1,0 +1,95 @@
+.button {
+    outline: none;
+    cursor: pointer;
+    border: none;
+    text-align: center;
+
+    &__animated{
+        transition: .2s all;
+
+        &:hover {
+            transform: translateY(-.5rem);
+        }
+    
+        &:active {
+            transform: translateY(0);
+        }
+    }
+
+    &__home {
+        background: white;
+        padding: 4.1rem 0;
+        width: 42rem;
+        font-size: 1.8rem;
+        font-family: 'K2D';
+        border-radius: 4px;
+        text-transform: uppercase;
+        margin: 3rem 4.5rem;
+    
+        @media(min-height: 800px) {
+            width: 50rem;
+            padding: 5rem 2rem;
+        }
+        
+    }
+
+    &__game{
+        padding: 2.1rem 2rem;
+        width: 15rem;
+        position: absolute;
+        transform: translate(-50% , -50%);
+        top: 50%;
+        right: -2.5rem;
+        font-family: 'K2D';
+        font-size: 1.6rem;
+        border-radius: 4px;
+        background: gray;
+        color: #fff;    
+        transition: .1s all;
+
+    
+        &:active {
+            transform:translate(-50% , -50%) scale(0.96);
+        }
+    
+    }
+
+    &__link{
+        display: inline-block;
+        text-align: center;
+    }
+
+    &__disabled{
+        cursor: not-allowed;
+
+        &:active {
+            transform: translate(-50% , -50%) scale(1);
+        }
+
+    }
+
+    &__result{
+        font-family: 'K2D';
+        height: 6rem;
+        width: 19rem;
+        font-size: 2rem;
+        background: transparent;
+        border: 3px solid #0B571F;
+        display: inline-block;
+        margin: 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all .3s;
+        color: inherit;
+
+        &:hover{
+            background: #0B571F;
+            border-color: #073713;
+            color: white;
+            border-radius: 3px;
+        }
+
+    }
+
+}

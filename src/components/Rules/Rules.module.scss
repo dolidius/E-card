@@ -1,0 +1,23 @@
+@import './../../sass/typography/headings';
+
+.rules {
+    text-align: center;
+    margin-top: 1.6rem;
+
+    @media(min-height: 800px) {
+        margin-top: 5.5rem;
+    }
+
+    &__rule {
+        display: inline-block;
+        font-size: 1.6rem;
+        margin: 0 5rem;
+        color: white;
+        font-family: 'Lato';
+
+        &:not(:last-child) {
+            margin-bottom: 4rem;
+        }
+    }
+
+}

@@ -1,0 +1,12 @@
+.heading__primary {
+        color: white;
+        text-align: center;
+        font-size: 6rem;
+        font-family: 'K2D';
+        margin-top: 4rem;
+        letter-spacing: .8rem;
+
+        @media(min-height: 800px) {
+            font-size: 8rem;
+        }
+}

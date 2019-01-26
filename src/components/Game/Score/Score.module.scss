@@ -1,0 +1,45 @@
+.score{
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 1rem;
+    background: #242427;
+    
+
+    &__circle{
+        position: absolute;
+        transform: translate(-50%, -50%);
+        left: 50%;
+        top: 50%;
+        width: 12.5rem;
+        height: 12.5rem;
+        background: transparent;
+        border: 7px solid #242427;
+        border-radius: 100%;
+        background: gray;
+    }
+
+    &__amount {
+        position: absolute;
+        transform: translate(-50%, -50%);
+        color: #fff;
+        font-size: 3rem;
+        font-family: 'K2D';
+        transition: all .5s;
+    }
+
+    &__enemy {
+        top: 25%;
+        left: 50%;
+    }
+
+    &__player {
+        top: 75%;
+        left: 50%;
+    }
+
+   
+
+}
