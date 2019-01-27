@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
 
-
 import GameContainer from '../Container/GameContainer';
 import Score from './Score/Score';
 import CardSet from './CardSet/CardSet';
 import Button from './../../containers/Buttons/Button';
 import BotSet from './CardSet/BotSet';
 import ResultModal from './ResultModal/ResultModal';
+import Timeouts from '../../containers/hoc/Timeouts';
 
 import itemRemove from '../../containers/utilities/itemRemove';
 import soundfile from '../../sounds/zawa.wav';
@@ -55,14 +55,14 @@ class Game extends Component {
         }
 
         this.setState({playing: false, isDisabled: true});
-        setTimeout(() => {
+        this.props.setTimeout(() => {
             const result = this.checkResults(this.state.playerCard.type, this.state.botCard.type);
             if(result === 'win' || result === 'lose') {
-                setTimeout(() => {
+                this.props.setTimeout(() => {
                     audio.play();
                 }, this.state.botStarting ? 350 : 1000)
             }
-            setTimeout(() => {
+            this.props.setTimeout(() => {
                 switch(result){
                     case 'win':
                     this.setState(prevState => ({
@@ -98,7 +98,7 @@ class Game extends Component {
                         if(this.state.botStarting){
                             this.setState({playing: false, isDisabled: true, playerCard: null, botCard: null});
                             this.state.moveCardBot();
-                            setTimeout(() => this.setState({
+                            this.props.setTimeout(() => this.setState({
                                 playing: true
                             }), 1200);
                         }else{
@@ -129,7 +129,7 @@ class Game extends Component {
         if(change){
             this.setState({playing: false, botStarting: true});
             this.state.moveCardBot();
-            setTimeout(() => this.setState({
+            this.props.setTimeout(() => this.setState({
                 playing: true
             }), 1200);
         }else{
@@ -221,4 +221,4 @@ class Game extends Component {
     }
 }
 
-export default Game;
+export default Timeouts(Game);

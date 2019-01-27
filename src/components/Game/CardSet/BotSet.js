@@ -10,6 +10,7 @@ import emperor from './../../../img/emperor.jpg';
 
 import moveCard from './../../../containers/utilities/moveCard';
 import getRandomNumber from './../../../containers/utilities/getRandomNumber';
+import Timeouts from './../../../containers/hoc/Timeouts'
 
 class BotSet extends Component {
 
@@ -63,13 +64,13 @@ class BotSet extends Component {
         const card = this.botCards.get(randomNumber);
         const cardIndex = getRandomNumber(0, this.botCards.size - 1);
 
-        setTimeout(() => {
+        this.props.setTimeout(() => {
             moveCard(card, this.placeholder.current);
             this.botCards.delete(randomNumber);
             if(cardIndex === 0) {
                 card.children[0].children[0].src = this.props.set === 'emperor' ? emperor : slave;
             }
-            setTimeout(() => {
+            this.props.setTimeout(() => {
                 if(!this.props.starting){
                     this.rotateCard(card);
                 }
@@ -111,4 +112,4 @@ class BotSet extends Component {
     }
 }
 
-export default BotSet;
+export default Timeouts(BotSet);
