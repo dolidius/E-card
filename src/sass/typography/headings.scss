@@ -1,12 +1,18 @@
 .heading__primary {
         color: white;
         text-align: center;
-        font-size: 6rem;
+        font-size: 8rem;
         font-family: 'K2D';
         margin-top: 4rem;
         letter-spacing: .8rem;
 
-        @media(min-height: 800px) {
-            font-size: 8rem;
+        @media(max-width: 370px){
+            font-size: 6rem;
         }
+
+        @media(max-height: 700px){
+            margin-top: 2rem;
+            font-size: 6rem;
+        }
+
 }

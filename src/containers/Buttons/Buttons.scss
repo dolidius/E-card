@@ -26,11 +26,50 @@
         text-transform: uppercase;
         margin: 3rem 4.5rem;
     
-        @media(min-height: 800px) {
+        @media(min-height: 830px) {
             width: 50rem;
             padding: 5rem 2rem;
         }
+
+        @media(max-height: 785px){
+            padding: 3.5rem 0;
+        }
+
+        @media(max-height: 700px){
+            padding: 3.2rem 0;
+            font-size: 1.7rem;
+            margin: 2.5rem 4.5rem;
+            width: 39rem;
+        }
+
+        @media(max-height: 600px){
+            padding: 3rem 0;
+            font-size: 1.5rem;
+            margin: 2rem 4.5rem;
+        }
+
+        @media(max-height: 550px){
+            padding: 2.5rem 0;
+            font-size: 1.5rem;
+            margin: 1.5rem 4.5rem;
+        }
+
+        @media(max-height: 550px){
+            padding: 2rem 0;
+            font-size: 1.5rem;
+            margin: 1rem 4.5rem;
+        }
+
+        @media(max-width: 470px){
+            width: 38rem;
+        }
         
+        @media(max-width: 370px){
+            width: 30rem;
+            font-size: 1.7rem;
+            margin: 3rem 2rem;
+        }
+
     }
 
     &__game{
@@ -116,6 +155,7 @@
             top: 20%;
             left: 2%;
         }
+
         &::before {
             content: "";
             position: absolute;
@@ -126,9 +166,6 @@
             background: white;
             clip-path: polygon(105% 0, 100% 0, 0 95%, 0 100%);
             border-radius: 3px;
-
-
-
         }
     }
 

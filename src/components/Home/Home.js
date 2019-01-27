@@ -18,6 +18,7 @@ class Home extends Component {
                     <Button href="rules/1" text='Rules' btnClass='button__home' animated/>
                     <Button href="about" text='About' btnClass='button__home' animated/>
                 </div>
+                
             </Container>
         )
     }
