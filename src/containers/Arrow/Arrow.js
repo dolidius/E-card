@@ -4,9 +4,9 @@ import classes from './Arrow.module.scss';
 
 import { Link } from 'react-router-dom';
 
-const Arrow = () => (
+const Arrow = (props) => (
     <Link to="/">
-        <div className={classes.arrow}>
+        <div className={props.inGame ? [classes.arrow, classes.arrow__inGame].join(' ') : classes.arrow}>
             <i className="fas fa-chevron-circle-left"></i>
         </div>
     </Link>

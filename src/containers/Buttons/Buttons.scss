@@ -60,6 +60,12 @@
             margin: 1rem 4.5rem;
         }
 
+        @media(max-height: 400px){
+            padding: 1.5rem 0;
+            font-size: 1.3rem;
+            margin: 1rem 4.5rem;
+        }
+
         @media(max-width: 470px){
             width: 38rem;
         }
@@ -84,6 +90,30 @@
         border-radius: 4px;
         color: #fff;    
         transition: transform .1s, background-color .4s ease-out, color .4s ease-out;
+
+
+
+        @media(max-width: 630px){
+            right: -5rem;
+        }
+
+        @media(max-width: 470px){
+            width: 13rem;
+            padding: 1.9rem;
+            font-size: 1.4rem;
+        }
+
+        @media(max-width: 400px){
+            right: -4.8rem;
+            width: 11rem;
+            font-size: 1.1rem;
+        }
+
+        @media(max-height: 440px) {
+            width: 13rem;
+            font-size: 1.2rem;
+            right: -4rem;
+        }
 
     
         &:active {

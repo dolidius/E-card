@@ -16,6 +16,10 @@ html{
         font-size: 50%;
     }
 
+    @media(max-height: 400px){
+        font-size: 43.75%;
+    }
+
     @media(max-width: 600px){
         font-size: 43.75%;
     }

@@ -19,6 +19,16 @@
         border: 7px solid #242427;
         border-radius: 100%;
         background: gray;
+
+        @media(max-width: 500px){
+            width: 11rem;
+            height: 11rem;
+        }
+        
+        @media(max-height: 440px) {
+            width: 9rem;
+            height: 9rem;
+        }
     }
 
     &__amount {
@@ -28,6 +38,15 @@
         font-size: 3rem;
         font-family: 'K2D';
         transition: all .5s;
+
+        @media(max-width: 500px){
+            font-size: 2.8rem;
+        }
+
+        @media(max-height: 440px) {
+            font-size: 2rem;
+        }
+
     }
 
     &__enemy {

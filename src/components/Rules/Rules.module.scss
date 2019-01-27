@@ -33,6 +33,11 @@
         i{
             cursor: pointer;
             font-size: 6rem;
+
+            @media(max-width: 600px){
+                font-size: 4rem;
+            }
+
         }
 
         &_left{
@@ -51,11 +56,23 @@
     font-family: 'K2D';
     padding: 0 15rem;
 
+    @media (max-width: 900px) {
+        padding: 0 10rem;
+    }
+
+    @media (max-width: 650px) {
+        padding: 0 8rem;
+    }
+
     &__title{
         padding: 4rem;
         font-size: 2.5rem;
         color: white;
         text-align: center;
+
+        @media(max-width: 650px) {
+            font-size: 2rem;
+        }        
     }
 
     &__set{
@@ -68,13 +85,42 @@
         margin: 1rem;
         width: 13rem;
 
+        @media(max-width: 950px){
+            width: 12.2rem;
+        }
+
+        @media(max-width: 800px) {
+            width: 11rem;
+        }
+
+        @media(max-width: 670px) {
+            width: 9rem;
+        }
+
+        @media(max-width: 490px) {
+            width: 7rem;
+        }
+
+        @media(max-width: 430px) {
+            width: 5rem;
+        }
+
+        @media(max-width: 360px) {
+            width: 4rem;
+        }
+
         &_sm{
             width: 11.6rem;
+
+            @media(max-width: 1650px) {
+                width: 8rem;
+            }
+
         }
 
     }
 
-    &__questionMark{
+    &__questionMark {
         display: inline-block;
         font-size: 10rem;
         color: white;
@@ -82,6 +128,23 @@
         position: relative;
         top: 50%;
         transform: translateY(-50%);
+
+        @media(max-width: 800px) {
+            font-size: 8rem;
+        }
+
+        @media(max-width: 670px) {
+            font-size: 7rem;
+        }
+
+        @media(max-width: 430px) {
+            font-size: 5rem;
+        }
+
+        @media(max-width: 360px) {
+            font-size: 3.8rem;
+        }
+
     }
 
     &__container{

@@ -5,7 +5,7 @@ import Arrow from '../../containers/Arrow/Arrow';
 
 const GameContainer = (props) => (
     <div className={classes.container__game}>
-        <Arrow />
+        <Arrow inGame />
         {props.children}
     </div>
 )
