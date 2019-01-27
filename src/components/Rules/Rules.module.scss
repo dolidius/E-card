@@ -13,11 +13,107 @@
         font-size: 1.6rem;
         margin: 0 5rem;
         color: white;
-        font-family: 'Lato';
 
         &:not(:last-child) {
             margin-bottom: 4rem;
         }
+    }
+
+    &__arrow{
+        position: absolute;
+        transform: translateY(-50%);
+        top: 50%;
+        color: white;
+        z-index: 10000;
+
+        a{
+            display: inline;
+        }
+
+        i{
+            cursor: pointer;
+            font-size: 6rem;
+        }
+
+        &_left{
+            left: 3rem;
+        }
+
+        &_right{
+            right: 3rem;
+        }
+
+    }
+
+}
+
+.rule{
+    font-family: 'K2D';
+    padding: 0 15rem;
+
+    &__title{
+        padding: 4rem;
+        font-size: 2.5rem;
+        color: white;
+        text-align: center;
+    }
+
+    &__set{
+        margin-top: 2rem;
+        text-align: center;
+        position: relative;
+    }
+
+    &__card{
+        margin: 1rem;
+        width: 13rem;
+
+        &_sm{
+            width: 11.6rem;
+        }
+
+    }
+
+    &__questionMark{
+        display: inline-block;
+        font-size: 10rem;
+        color: white;
+        padding: 0 3rem;
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    &__container{
+        margin-top: 10rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__sword{
+        width: 10rem;
+        padding: 1rem;
+        position: relative;
+        top: 50%;
+        transform: translateY(-25%);
+    }
+
+    &__crown{
+        position: absolute;
+        font-size: 6rem;
+        color: yellow;
+        transform: translate(-50%, -100%);
+        left: 50%;
+    }
+
+    &__amount{
+        color: green;
+        font-size: 7rem;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateY(90%) translateX(-50%);
     }
 
 }

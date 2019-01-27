@@ -15,7 +15,7 @@ class Home extends Component {
                 </div>
 
                 <div className={classes.home__group}>
-                    <Button href="rules" text='Rules' btnClass='button__home' animated/>
+                    <Button href="rules/1" text='Rules' btnClass='button__home' animated/>
                     <Button href="about" text='About' btnClass='button__home' animated/>
                 </div>
             </Container>

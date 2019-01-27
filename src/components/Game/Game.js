@@ -190,9 +190,11 @@ class Game extends Component {
     render() {
         let text;
         if(this.state.playing) {
-            text = 'End Turn'
             if(this.state.isDisabled) {
-                text = 'Pick a card'
+                text = 'Pick a card';
+
+            } else {
+                text = 'End Turn';
             }
         } else {
             text="Enemy's Turn"

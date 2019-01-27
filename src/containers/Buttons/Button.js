@@ -22,7 +22,7 @@ const Button = ({
         return(
             <button 
                 disabled={isDisabled}
-                className={`button ${btnClass} ${animated ? 'button__animated': null} ${isDisabled ? 'button__disabled' : null}`}
+                className={`button ${btnClass} ${animated ? 'button__animated': null} ${isDisabled ? 'button__disabled' : null} ${text === "End Turn" ? 'button__allow' : null} ${text === "Enemy's Turn" ? 'button__bot_turn' : null}`}
                 onClick={clicked}
             >
                 {text}

@@ -66,11 +66,10 @@ class BotSet extends Component {
         setTimeout(() => {
             moveCard(card, this.placeholder.current);
             this.botCards.delete(randomNumber);
+            if(cardIndex === 0) {
+                card.children[0].children[0].src = this.props.set === 'emperor' ? emperor : slave;
+            }
             setTimeout(() => {
-                if(cardIndex === 0) {
-                    card.children[0].children[0].src = this.props.set === 'emperor' ? emperor : slave;
-                }
-
                 if(!this.props.starting){
                     this.rotateCard(card);
                 }

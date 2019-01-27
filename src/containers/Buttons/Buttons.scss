@@ -43,9 +43,8 @@
         font-family: 'K2D';
         font-size: 1.6rem;
         border-radius: 4px;
-        background: gray;
         color: #fff;    
-        transition: .1s all;
+        transition: transform .1s, background-color .5s ease-out, color .5s ease-out;
 
     
         &:active {
@@ -61,7 +60,7 @@
 
     &__disabled{
         cursor: not-allowed;
-        background: #101010;
+        background: #CE5353;
 
         &:active {
             transform: translate(-50% , -50%) scale(1);
@@ -131,6 +130,16 @@
 
 
         }
+    }
+
+    &__allow {
+        background-color: rgb(206, 172, 23);
+        color: black;
+
+    }
+
+    &__bot_turn {
+        background-color: gray;
     }
 
 }
