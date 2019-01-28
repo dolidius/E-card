@@ -5,7 +5,7 @@ import Image from './Image';
 
 const Rule5 = () => (
     <div className={classes.rule}>
-        <div className={classes.rule__container} style={{padding: '0 22rem'}}>
+        <div className={[classes.rule__container, classes.pd_hg].join(' ')} >
             <div style={{position: 'relative'}}>
                 <Image card={'emperor'} won />
                 <span className={classes.rule__amount}>+1</span>

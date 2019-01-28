@@ -8,7 +8,7 @@ import Image from './Image';
 const Rule4 = () => (
     <div className={classes.rule}>
 
-        <div className={classes.rule__container} style={{padding: '0 15rem'}}>
+        <div className={[classes.rule__container, classes.pd_bg].join(' ')}>
 
             <div>
                 <Image card={'slave'} won />
