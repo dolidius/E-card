@@ -30,4 +30,4 @@ $ npm install
 $ npm start
 ```
 
-The application will start running on port 3000.
+The application will be running on port 3000.
