@@ -7,6 +7,10 @@ E-card is a card game based on the movie, mobile-ready written in react.
 
 ![alt text](https://i.imgur.com/c3Jnqmw.png)
 
+## Live
+
+https://e-card.ga/
+
 ### Installation
 
 E-card requires [Node.js](https://nodejs.org/) to run app locally.
