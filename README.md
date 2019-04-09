@@ -2,7 +2,7 @@
 
 Written together with <a href='https://github.com/idlesolution'>Idlesolution</a>
 
-E-card is a card game based on the movie, mobile-ready written in react.
+E-card is a card game based on movie, mobile-ready written in react.
 
 
 ![Game board](https://i.imgur.com/c3Jnqmw.png)
