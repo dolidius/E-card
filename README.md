@@ -21,7 +21,7 @@ Download the repo by downloading zip or cloning the repo:
 $ git clone https://github.com/dolidius/E-card.git
 ```
 
-Install the dependencies and devDependencies and start the server.
+Install the dependencies and start the server.
 
 ```sh
 $ cd e-card
